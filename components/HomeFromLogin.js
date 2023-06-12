@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './Home';
 import { ProfileHome } from './ProfileHome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Colors } from '../constants/styles';
 
 export function HomeFromLogin() {
   const Tab = createBottomTabNavigator();
@@ -23,7 +24,7 @@ export function HomeFromLogin() {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'black',
+          tabBarActiveTintColor: Colors.primary500,
           tabBarInactiveTintColor: 'gray',
         })}>
         <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
