@@ -1,22 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, TextInput, View, Button, Pressable, Text } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import { userReducer } from '../redux/userReducer';
 import { useContext, useReducer, useState } from 'react';
 import { UserContext } from '../store/auth-context';
 import { Colors } from '../constants/styles';
 
 export function Login() {
   const navigate = useNavigation();
-  const [state, dispatch] = useReducer(userReducer, '');
   const [username, setUsername] = useState('');
   const userCtx = useContext(UserContext);
 
   let navigateToHome = () => {
-    // await dispatch({
-    //     type: 'SET_USER',
-    //     payload:  username,
-    //   });
     userCtx.setUsername(username);
     navigate.replace('HomeFromLogin');
   }
@@ -49,7 +43,7 @@ const styles = StyleSheet.create({
   },
   nestedContainer: {
     alignItems: 'center',
-    paddingTop:10
+    marginTop:10
   },
   formContainer:{
     marginTop: 64,

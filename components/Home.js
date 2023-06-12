@@ -1,13 +1,6 @@
 import { useContext, useState } from 'react';
 import { StyleSheet, View ,FlatList, Text, Modal, Pressable, TextInput } from 'react-native';
-import { userReducer } from '../redux/userReducer';
-import { useReducer } from 'react';
-
-import { Profile } from './Profile';
-import { NavigationContainer } from '@react-navigation/native';
-import ActionBar from 'react-native-action-bar';
-import UserContextProvider, { UserContext } from '../store/auth-context';
-import { ProfileHome } from './ProfileHome';
+import { UserContext } from '../store/auth-context';
 import { Colors } from '../constants/styles'
 import { Appbar } from 'react-native-paper';
 
@@ -39,7 +32,6 @@ export function Home() {
       homeNumber: '25656585',
       mobileNumber: '987954321'
     }]);
-  const [state, dispatch] = useReducer(userReducer, '');
 
   let addFriendHandler = () =>  {
     setFriends((currentFriends) => [...currentFriends, 

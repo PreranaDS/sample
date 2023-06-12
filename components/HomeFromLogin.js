@@ -21,7 +21,6 @@ export function HomeFromLogin() {
               iconName = focused ? 'ios-list' : 'ios-list-outline';
             }
 
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: Colors.primary500,
