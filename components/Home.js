@@ -175,8 +175,7 @@ export function Home() {
             setEditFriendHomeNumber(itemData.item.homeNumber);
             setEditFriendMobileNumber(itemData.item.mobileNumber);
             setEditFriendKey(itemData.item.key);
-            setContactInfoModalVisible(true); 
-            console.log(contactInfo)}}>
+            setContactInfoModalVisible(true)}}>
               <View style={styles.itemContainer}> 
                 <Text> {itemData.item.text} </Text>
               </View>

@@ -27,6 +27,8 @@ export function ProfileDetails() {
     <View style={styles.appContainer}>
       <Text>Profile Details:</Text>
       <Text>Username: {userCtx.username}</Text>
+      <Text>Mobile Number: {userCtx.mobileNumber}</Text>
+      <Text> Home Number: {userCtx.homeNumber}</Text>
     </View>
     </>
   );
