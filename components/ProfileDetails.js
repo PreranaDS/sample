@@ -8,22 +8,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import ActionBar from 'react-native-action-bar';
 import { UserContext } from '../store/auth-context';
 import {useNavigation} from '@react-navigation/native';
+import { Appbar } from 'react-native-paper';
 
 export function ProfileDetails() {
   const userCtx = useContext(UserContext);
   const navigate = useNavigation();
   return (
     <>
-      <ActionBar
-        containerStyle={styles.bar}
-        title={'Profile Details'}
-        rightIcons={[
-            {
-                name: 'back',
-                onPress: () => navigate.replace("Profile"),
-            }
-        ]}
-      />
+      <Appbar.Header>
+        <Appbar.BackAction onPress={() => {navigate.replace("Profile")}} />
+        <Appbar.Content title="Profile Details" />
+      </Appbar.Header>
+
     <View style={styles.appContainer}>
       <Text>Profile Details:</Text>
       <Text>Username: {userCtx.username}</Text>

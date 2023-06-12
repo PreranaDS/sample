@@ -27,8 +27,8 @@ export function HomeFromLogin() {
           tabBarActiveTintColor: Colors.primary500,
           tabBarInactiveTintColor: 'gray',
         })}>
-        <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
-        <Tab.Screen name="Profile" component={ProfileHome} options={{ headerShown: false }}/>
+        <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
+        <Tab.Screen name="Profile" component={ProfileHome} options={{headerShown: false}}/>
       </Tab.Navigator>
     );
 }

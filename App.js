@@ -12,21 +12,36 @@ import { AntDesign } from '@expo/vector-icons';
 import UserContextProvider, {UserContext} from './store/auth-context';
 import { ProfileDetails } from './components/ProfileDetails';
 import { HomeFromLogin } from './components/HomeFromLogin';
+import { useContext } from 'react';
 
-
-export default function App() {
+function AuthStack(){
   const Stack = createNativeStackNavigator();
+  return(
+      <Stack.Navigator>
+        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
+        <Stack.Screen name='HomeFromLogin' component={HomeFromLogin} options={{headerShown: false}}/>
+        {/* <Tab.Screen name='Profile' component={Profile} options={{ headerShown: false }}/>
+        <Tab.Screen name='ProfileDetails' component={ProfileDetails} options={{ headerShown: false }}/> */}
+      </Stack.Navigator>
+  );
+}
+
+
+function Root() {
+  const userCtx = useContext(UserContext);
 
   return (
+    <NavigationContainer>
+      {userCtx.isLoggedIn && <HomeFromLogin />}
+      {!userCtx.isLoggedIn && <AuthStack />}
+    </NavigationContainer>
+  );
+}
+
+export default function App() {
+  return (
     <UserContextProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='Login' component={Login} options={{ headerShown: false }}/>
-          <Stack.Screen name='HomeFromLogin' component={HomeFromLogin} options={{ headerShown: false }}/>
-          {/* <Tab.Screen name='Profile' component={Profile} options={{ headerShown: false }}/>
-          <Tab.Screen name='ProfileDetails' component={ProfileDetails} options={{ headerShown: false }}/> */}
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Root />
     </UserContextProvider>
     
   );

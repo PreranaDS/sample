@@ -9,6 +9,7 @@ import ActionBar from 'react-native-action-bar';
 import UserContextProvider, { UserContext } from '../store/auth-context';
 import { ProfileHome } from './ProfileHome';
 import { Colors } from '../constants/styles'
+import { Appbar } from 'react-native-paper';
 
 export function Home() {
   const userCtx = useContext(UserContext);
@@ -66,16 +67,12 @@ export function Home() {
   
   return (
     <>
-      <ActionBar
-        containerStyle={styles.bar}
-        title={'Home'}
-        rightIcons={[
-            {
-                name: 'plus',
-                onPress: () => setModalVisible(true),
-            }
-        ]}
-      />
+      <Appbar.Header>
+        <Appbar.Content title="Home" />
+        <Appbar.Action icon="plus" onPress={() => {setModalVisible(true)}} />
+        <Appbar.Action icon="logout" onPress={() => {userCtx.logout();}} />
+      </Appbar.Header>
+
     <View style={styles.appContainer}>
       <Modal
         animationType="slide"
