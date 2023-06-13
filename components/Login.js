@@ -24,9 +24,9 @@ export function Login() {
         <View style={styles.nestedContainer}>
           <TextInput style={styles.textinputstyle} placeholder='Enter password'  secureTextEntry={true}/>
         </View>
-        <View style={styles.nestedContainer}>
+        <View style={styles.nestedContainerLogin}>
           <Pressable onPress={navigateToHome} style={styles.button}>
-            <Text style={{fontWeight:'bold', fontSize:17}}>Login</Text>
+            <Text style={{fontSize:17, color:'white'}}>Login</Text>
           </Pressable>
         </View>
         
@@ -43,14 +43,18 @@ const styles = StyleSheet.create({
   },
   nestedContainer: {
     alignItems: 'center',
-    marginTop:10
+    paddingTop:10
+  },
+  nestedContainerLogin: {
+    alignItems: 'center',
+    paddingTop:10
   },
   formContainer:{
     marginTop: 64,
     marginHorizontal: 32,
-    padding: 20,
+    padding: 50,
     borderRadius: 8,
-    backgroundColor: Colors.primary800,
+    backgroundColor: Colors.primary100,
     elevation: 2,
     shadowColor: 'black',
     shadowOffset: { width: 1, height: 1 },

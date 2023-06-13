@@ -5,6 +5,7 @@ import ActionBar from 'react-native-action-bar';
 import { Appbar } from 'react-native-paper';
 import { useContext } from 'react';
 import { UserContext } from '../store/auth-context';
+import { Colors } from '../constants/styles';
 
 export  function Profile() {
   const navigate = useNavigation();
@@ -45,14 +46,13 @@ const styles = StyleSheet.create({
     elevation: 2
   },
   buttonOpen: {
-    backgroundColor: '#F194FF',
+    backgroundColor: Colors.primary500,
   },
   buttonClose: {
-    backgroundColor: '#2196F3',
+    backgroundColor: Colors.primary800,
   },
   textStyle: {
-    color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    color: 'white',
+    fontSize: 17,
   }
 });

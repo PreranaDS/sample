@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   itemContainer:{
-    backgroundColor: Colors.primary800,
+    backgroundColor: Colors.primary100,
     width:'100%',
     borderWidth:0.6,
     borderColor:'white',
